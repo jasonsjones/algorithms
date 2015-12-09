@@ -13,8 +13,16 @@
 
     /**
      * Bubblesort sorting algorithm. Runs in O(n^2) time.
-     * @param  {Array} a the array to sort
-     * @param  {Function} cmp the comparator function, optional
+     * This algorithm * loops over the array, and with each pass, the largest
+     * value (or smaller value in the case of decending order) will 'bubble'
+     * up to the end of the array.  This essentially partitions the array into
+     * an unsorted partion at the front and a gradually more sorted partition
+     * at the end until the entire array is sorted.
+     *
+     * @param  {Array}     a the array to sort
+     * @param  {Function}  cmp the comparator function, optional.  If not
+     *                     provided, the comparator function will sort the
+     *                     array in ascending order.
      * @return {Array}     the sorted array
      */
     function bubblesort(a, cmp) {
