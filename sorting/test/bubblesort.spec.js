@@ -3,11 +3,11 @@ var bubblesort = require('../bubblesort');
 
 var desc = function (a, b) {
     return b - a;
-}
+};
 
 var sortPeople = function (a, b) {
     return a.age - b.age;
-}
+};
 
 var people = [
     {name: 'alice', age: 34},
@@ -32,8 +32,8 @@ describe('bubblesort sorting algorithm', function () {
     });
 
     it('sorts an array of complex objects', function () {
-        expect(bubblesort(people, sortPeople)[0]).to.be.eql({ name: 'david', age: 25 })
-        expect(bubblesort(people, sortPeople)[3]).to.be.eql({ name: 'bob', age: 42 })
+        expect(bubblesort(people, sortPeople)[0]).to.be.eql({name: 'david', age: 25});
+        expect(bubblesort(people, sortPeople)[3]).to.be.eql({name: 'bob', age: 42});
     });
 
 });

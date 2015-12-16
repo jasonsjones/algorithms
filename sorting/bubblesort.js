@@ -32,8 +32,8 @@
             // let's assume the array is sorted for this pass
             var sorted = true;
             for (var j = 0; j < i; j++) {
-                if (cmp(a[j], a[j+1]) > 0) {
-                    swap(a, j, j+1);
+                if (cmp(a[j], a[j + 1]) > 0) {
+                    swap(a, j, j + 1);
                     // if we need to swap elements, it is not sorted
                     sorted = false;
                 }

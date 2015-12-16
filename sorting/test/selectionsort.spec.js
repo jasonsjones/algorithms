@@ -3,11 +3,11 @@ var selectionsort = require('../selectionsort');
 
 var desc = function (a, b) {
     return b - a;
-}
+};
 
 var sortPeople = function (a, b) {
     return a.age - b.age;
-}
+};
 
 var people = [
     {name: 'alice', age: 34},
@@ -32,8 +32,8 @@ describe('selection sort sorting algorithm', function () {
     });
 
     it('sorts an array of complex objects', function () {
-        expect(selectionsort(people, sortPeople)[0]).to.be.eql({ name: 'david', age: 25 })
-        expect(selectionsort(people, sortPeople)[3]).to.be.eql({ name: 'bob', age: 42 })
+        expect(selectionsort(people, sortPeople)[0]).to.be.eql({name: 'david', age: 25});
+        expect(selectionsort(people, sortPeople)[3]).to.be.eql({name: 'bob', age: 42});
     });
 
 });
