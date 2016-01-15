@@ -5,6 +5,15 @@
         return a - b;
     }
 
+    /**
+     * Mergesort sorting algorithm.  Runs in O(n log n) time in all scenarios--best, average
+     * and worst case.
+     *
+     * Mergesort is categorized as a divide and conquer algorithm.  The algorithm partitions
+     * the array in halves then calls itself on each half.  When each array partition consists
+     * of only one element it 'merges' the partitions back together on the way back up the stack
+     * sorting the elements (based on the provided comparator function) along the way.
+     */
     function mergeSort(arr, cmp) {
         cmp = cmp || compareFnAscend;
 
