@@ -1,6 +1,7 @@
 (function () {
     'use strict';
 
+    // Default comparator function.  Will sort elements in ascending order.
     function compareFnAscend(a, b) {
         return a - b;
     }

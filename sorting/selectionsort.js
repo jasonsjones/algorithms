@@ -1,12 +1,14 @@
 (function () {
     'use strict';
 
+    // Helper function to swap two elements in the array, a.
     function swap(a, i, j) {
         var ai = a[i], aj = a[j];
         a[i] = aj;
         a[j] = ai;
     }
 
+    // Default comparator function.  Will sort elements in ascending order.
     function compareFnAscend(a, b) {
         return a - b;
     }
