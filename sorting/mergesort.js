@@ -13,6 +13,12 @@
      * the array in halves then calls itself on each half.  When each array partition consists
      * of only one element it 'merges' the partitions back together on the way back up the stack
      * sorting the elements (based on the provided comparator function) along the way.
+     *
+     * @param {Array}     arr - the array to sort
+     * @param {Function}  cmp - the comparator function, optional.  If not
+     *                     provided, the comparator function will sort the
+     *                     array in ascending order.
+     * @return {Array}     the sorted array
      */
     function mergeSort(arr, cmp) {
         cmp = cmp || compareFnAscend;
@@ -24,11 +30,24 @@
         var mid = Math.floor(n / 2);
         var left = arr.slice(0, mid);
         var right = arr.slice(mid, n);
+
         mergeSort(left, cmp);
         mergeSort(right, cmp);
+
         return merge(left, right, arr, cmp);
     }
 
+    /**
+     * Merge two sorted arrays into one sorted array.
+     *
+     * @param {Array}  left - the left array to merge
+     * @param {Array}  right - the right array to merge
+     * @param {Array}  arr - the one array to merge the left & right arrays
+     * @param {Function}  cmp - the comparator function that is passed from mergeSort.
+     *                     Used to determine which element from the left or right array will
+     *                     be merged into arr.
+     * @return {Array}     the merged (and sorted) array
+     */
     function merge(left, right, arr, cmp) {
         var nLeft = left.length;
         var nRight = right.length;
@@ -56,5 +75,4 @@
     }
 
     module.exports = mergeSort;
-
 }());
