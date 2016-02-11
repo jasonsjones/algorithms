@@ -4,16 +4,19 @@
   "description": "Javascript implementation of funtamental algorithms",
   "main": "bubblesort.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha test/",
+    "prelint": "npm run jscs",
+    "lint": "jshint --reporter=node_modules/jshint-stylish test/*.spec.js",
+    "jscs": "jscs *.js test/*.spec.js"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
   "keywords": [
-      "algorithms",
-      "sorting",
-      "bubblesort"
+    "algorithms",
+    "sorting",
+    "bubblesort"
   ],
   "author": "Jason Jones",
   "license": "MIT",
@@ -29,6 +32,8 @@
     "gulp-load-plugins": "^0.10.0",
     "gulp-mocha": "^2.0.1",
     "gulp-util": "^3.0.4",
+    "jscs": "2.9.0",
+    "jshint": "2.9.1",
     "jshint-stylish": "^1.0.1",
     "mocha": "^2.2.4"
   }
