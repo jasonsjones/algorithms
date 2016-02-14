@@ -45,6 +45,23 @@
         }
     }
 
+    /**
+     * Quicksort sorting algorithm runs in O(n log n) time in best- and average-
+     * cases and O(n^2) in the worst case.  However, using a randomized pivot selection
+     * significantly reduces the chance of the worst case ocurring. Quicksort is also considered
+     * an "in-place" algorithm, meaning it operates on the original array so there is not a
+     * requirement for any additional space, or memory, for the algorithm.
+     *
+     * Quicksort is categorized as a divide and conquer algorithm.  The algorithm partitions an
+     * array based on the selection of a pivot.  All values in the array that are less than the
+     * pivot are moved to the left of the pivot and all vaules greater than the pivot value are
+     * moved to the right of the pivot.  Quicksort is then called recursively on each partition.
+     *
+     * Quicksort simply calls a helper function, doQuicksort, to do the work of quicksort.  This
+     * was abstracted a bit to present a clean API to the client.
+     *
+     * @param {Array}  arr - the array to sort
+     */
     function quicksort(arr) {
         doQuicksort(arr, 0, arr.length - 1);
     }
