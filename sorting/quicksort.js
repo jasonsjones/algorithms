@@ -6,6 +6,7 @@
         return a - b;
     }
 
+    // Helper function to swap two elements in the array, arr.
     function swap(arr, i, j) {
         var temp = arr[i];
         arr[i] = arr[j];
@@ -37,7 +38,6 @@
     }
 
     function doQuicksort(arr, start, end, cmp) {
-        cmp = cmp || compareFnAscend;
         if (start < end) {
             var partionIndex = randomizePartion(arr, start, end, cmp);
             doQuicksort(arr, start, partionIndex - 1, cmp);
@@ -60,10 +60,14 @@
      * Quicksort simply calls a helper function, doQuicksort, to do the work of quicksort.  This
      * was abstracted a bit to present a clean API to the client.
      *
-     * @param {Array}  arr - the array to sort
+     * @param {Array}     arr - the array to sort
+     * @param {Function}  cmp - the comparator function, optional.  If not
+     *                     provided, the comparator function will sort the
+     *                     array in ascending order.
      */
-    function quicksort(arr) {
-        doQuicksort(arr, 0, arr.length - 1);
+    function quicksort(arr, cmp) {
+        cmp = cmp || compareFnAscend;
+        doQuicksort(arr, 0, arr.length - 1, cmp);
     }
 
     module.exports = quicksort;
